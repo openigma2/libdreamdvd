@@ -593,7 +593,7 @@ static int readApiSize(int fd, int *xres, int *yres, int *aspect)
 static int readApiFrameRate(int fd, int *framerate)
 {
 	unsigned int frate;
-	if (!ioctl(fd, VIDEO_GET_FRAME_RATE, &frate)) {
+	if (!ioctl(fd, VIDEO_GET_FRAME_COUNT, &frate)) {
 		*framerate = frate;
 		return 0;
 	}
